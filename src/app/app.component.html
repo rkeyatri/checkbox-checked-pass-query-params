@@ -1,0 +1,36 @@
+<hello name="{{ name }}"></hello>
+<p>
+  Start editing to see some magic happen :)
+</p>
+
+<table class='hovertable'>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let item of list">
+      <tr>
+        <td>
+          <input 
+            type="checkbox" 
+            [value]="item.id" 
+            (change)="onChecked(item, $event)">
+        </td>
+        <td>{{item.name}}</td>
+        <td>{{item.age}}</td>
+        <td>{{item.date}}</td>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>
+
+
+<br>
+<button (click)="goToOther()">Navigate to Other component</button>
+<hr>
+<router-outlet></router-outlet>
